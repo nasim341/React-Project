@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css'
 //import Header from './component/Header'
 
@@ -10,17 +11,26 @@ function App() {
     return ( 
         <div className='App'>
             <h1 style={{color:'red'}}>React</h1>
-            <Person name="Nasim Ahmed" job="Development"></Person>
-            <Person name="Bulbul Islam" job="Developer"></Person>
+            
+            <Counter></Counter>
+            
+            
         </div>
     );
 }
-function Person({name,job}){
+
+
+function Counter(){
+    const [count,setCount] = useState(0);
+    const incraesecount=()=>{
+        setCount(count+1);
+    }
+   
     return(
-   <div className='person'>
-        <h1 className='btn btn-primary'>{name}</h1>
-        <h2>profession:{job}</h2>
-    </div>     
+        <div>
+            <h1>Count: {count}</h1>
+            <button onClick={incraesecount} className='btn btn-primary'>Increase</button>
+        </div>
     )
 }
 export default App;
