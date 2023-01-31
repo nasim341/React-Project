@@ -19,17 +19,20 @@ function App() {
     );
 }
 
-
 function Counter(){
     const [count,setCount] = useState(0);
-    const incraesecount=()=>{
+    const incraeseCount=()=>{
         setCount(count+1);
+    }
+    const decreaseCount=()=>{
+        setCount(count-1);
     }
    
     return(
         <div>
             <h1>Count: {count}</h1>
-            <button onClick={incraesecount} className='btn btn-primary'>Increase</button>
+            <button onClick={incraeseCount} className='btn btn-primary'>Increase</button>
+            <button onClick={decreaseCount} className='btn btn-'>Decrease</button>
         </div>
     )
 }
